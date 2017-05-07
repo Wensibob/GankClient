@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">干货集中营</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="save_girl_successfully">您已成功将妹子的图片保存在您的图库了！</string>
+    <string name="save_girl_failly">对不起，妹子的图片不能存进您的图库中</string>
+    <string name="share_girl_to">把妹子分享到</string>
+    <string name="market">market://details?id=%s</string>
+    <string name="action_settings">设置</string>
+    <string name="about">关于</string>
+    <string name="load_fail">加载失败</string>
+    <string name="retry">重试</string>
+    <string name="load_finished">加载完毕</string>
+    <string name="girl">girl</string>
+    <string name="daily_activity">每日一图</string>
+    <string name="meizi_save">保存</string>
+    <string name="menu_share">分享</string>
+    <string name="save_meizi_error">sorry，你并不能保存这个可爱的妹子==</string>
+    <string name="network_unavaliable">网络不可用，请设置网络</string>
+    <string name="wifi_unavaliable">您使用的不是wifi网络哦，要继续吗？</string>
+    <string name="wifi_continue">继续</string>
+    <string name="error_happened">出了点问题</string>
+</resources>

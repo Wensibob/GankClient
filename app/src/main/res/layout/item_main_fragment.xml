@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/tv_main_fragment_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/activity_horizontal_margin"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/main_fragment_item_date"
+        android:textStyle="bold"/>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/main_fragment_card_view"
+        android:layout_margin="@dimen/main_fragment_cardview_margin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/AppCardView"
+        >
+        <LinearLayout
+            android:id="@+id/main_fragment_card_ll"
+            android:orientation="vertical"
+            android:layout_marginLeft="@dimen/main_fragment_cardview_margin"
+            android:layout_marginRight="@dimen/main_fragment_cardview_margin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/selectableItemBackground"
+            >
+
+            <TextView
+                android:id="@+id/tv_main_frgment_item_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/activity_vertical_margin"
+                android:textSize="@dimen/main_fragment_item_title"
+                android:textStyle="bold"
+                android:text="text"
+                tools:textColor="@color/colorPrimaryText"/>
+
+            <TextView
+                android:id="@+id/tv_main_frgment_item_author"
+                android:paddingTop="@dimen/activity_vertical_margin"
+                android:layout_marginBottom="@dimen/main_fragment_cardview_margin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/main_fragment_item_author"
+                android:textStyle="normal"
+                android:textColor="@color/colorPrimaryDark"
+                android:gravity="center"
+                android:text="text"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
