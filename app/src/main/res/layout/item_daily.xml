@@ -49,7 +49,6 @@
                 android:textSize="@dimen/main_fragment_item_author"
                 android:textStyle="normal"
                 android:textColor="@color/colorPrimaryDark"
-                android:gravity="center"
                 android:text="text" />
         </RelativeLayout>
     </LinearLayout>

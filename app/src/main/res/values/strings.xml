@@ -22,4 +22,6 @@
     <string name="wifi_unavaliable">您使用的不是wifi网络哦，要继续吗？</string>
     <string name="wifi_continue">继续</string>
     <string name="error_happened">出了点问题</string>
+    <string name="copy_successed">复制成功</string>
+    <string name="share_gank_to">想把干货分享到</string>
 </resources>
