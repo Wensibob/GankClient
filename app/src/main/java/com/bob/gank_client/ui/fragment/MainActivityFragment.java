@@ -7,6 +7,7 @@ import android.view.View;
 
 import com.bob.gank_client.R;
 import com.bob.gank_client.mvp.model.entity.Gank;
+import com.bob.gank_client.mvp.presenter.ChromeViewPresenter;
 import com.bob.gank_client.mvp.presenter.MainFragmentPresenter;
 import com.bob.gank_client.mvp.view.IMainFragmentView;
 import com.bob.gank_client.ui.activity.MainActivity;
@@ -34,6 +35,7 @@ public class MainActivityFragment extends BaseFragment<MainFragmentPresenter> im
         private int page = 1;
         private boolean isRefresh = true;
         private boolean canLoading = true;
+        private static ChromeViewPresenter chromeViewPresenter;
 
         @Bind(R.id.recycler_view)
         AutoRecyclerView recyclerView;
@@ -43,7 +45,8 @@ public class MainActivityFragment extends BaseFragment<MainFragmentPresenter> im
         public MainActivityFragment() {
         }
 
-        public static MainActivityFragment newInstance(String type) {
+        public static MainActivityFragment newInstance(String type, ChromeViewPresenter presenter) {
+                chromeViewPresenter = presenter;
                 MainActivityFragment fragment = new MainActivityFragment();
                 Bundle bundle = new Bundle();
                 bundle.putString(TYPE, type);
@@ -62,7 +65,7 @@ public class MainActivityFragment extends BaseFragment<MainFragmentPresenter> im
         @Override
         public void init() {
                 gankList = new ArrayList<>();
-                mainRecyclerViewAdapter = new MainRecyclerViewAdapter(gankList, getContext());
+                mainRecyclerViewAdapter = new MainRecyclerViewAdapter(chromeViewPresenter,gankList, getContext());
                 recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
                 recyclerView.setAdapter(mainRecyclerViewAdapter);
                 recyclerView.setLoadMoreListener(this);

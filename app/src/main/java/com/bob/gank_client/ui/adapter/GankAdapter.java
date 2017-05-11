@@ -1,6 +1,7 @@
 package com.bob.gank_client.ui.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -8,8 +9,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.bob.gank_client.GankConfig;
 import com.bob.gank_client.R;
 import com.bob.gank_client.mvp.model.entity.Gank;
+import com.bob.gank_client.mvp.presenter.ChromeViewPresenter;
+import com.bob.gank_client.ui.activity.WebViewActivity;
 
 import java.util.List;
 
@@ -23,9 +27,11 @@ import butterknife.OnClick;
 
 public class GankAdapter extends  RecyclerView.Adapter<GankAdapter.GankHolder>{
         private  List<Gank> gankList;
-        private Context context;
+        private static Context context;
+        private static ChromeViewPresenter chromeViewPresenter;
 
-        public GankAdapter(List<Gank> gankList, Context context) {
+        public GankAdapter(ChromeViewPresenter presenter,List<Gank> gankList, Context context) {
+                this.chromeViewPresenter = presenter;
                 this.gankList = gankList;
                 this.context = context;
         }
@@ -82,6 +88,10 @@ public class GankAdapter extends  RecyclerView.Adapter<GankAdapter.GankHolder>{
                 @OnClick(R.id.gank_item_card_ll)
                 void gankClick() {
                         //TODO 出发点击事件启动WebActivity
+                        chromeViewPresenter.openWebView((Gank)cardView.getTag());
+                        /*Intent intent = new Intent(context, WebViewActivity.class);
+                        intent.putExtra(GankConfig.GANK, (Gank)cardView.getTag());
+                        context.startActivity(intent);*/
                 }
 
                 public GankHolder(View itemView) {

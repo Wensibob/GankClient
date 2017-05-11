@@ -65,7 +65,7 @@ public class WebViewPresenter extends BasePresenter<IWebView> {
                 }
         }
 
-        public void moreOperation(Gank gank) {
+        public void shareGank(Gank gank) {
                 if (gank != null) {
                         ShareUtil.shareGank(context,gank);
                 }

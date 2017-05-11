@@ -11,4 +11,5 @@
     <dimen name="main_fragment_cardview_margin">5dp</dimen>
     <dimen name="app_bar_height">320dp</dimen>
     <dimen name="recycler_view_padding">40dp</dimen>
+    <dimen name="progressBarHeight">2dp</dimen>
 </resources>

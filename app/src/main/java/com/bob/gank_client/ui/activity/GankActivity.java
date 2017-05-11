@@ -20,6 +20,7 @@ import com.bob.gank_client.R;
 import com.bob.gank_client.ShareElement;
 import com.bob.gank_client.mvp.model.entity.Gank;
 import com.bob.gank_client.mvp.model.entity.Meizi;
+import com.bob.gank_client.mvp.presenter.ChromeViewPresenter;
 import com.bob.gank_client.mvp.presenter.GankPresenter;
 import com.bob.gank_client.ui.adapter.GankAdapter;
 import com.bob.gank_client.ui.base.ToolBarActivity;
@@ -46,6 +47,7 @@ public class GankActivity extends ToolBarActivity<GankPresenter> implements IGan
         private List<Gank> gankList;
         private GankAdapter adapter;
         private Calendar calendar;
+        private ChromeViewPresenter chromeViewPresenter;
 
         //TODO 需不需要加一个进度条
         @Bind(R.id.toolbar_layout)
@@ -79,7 +81,7 @@ public class GankActivity extends ToolBarActivity<GankPresenter> implements IGan
 
         private void showVideo() {
                 if (gankList.size() > 0 && gankList.get(0).type.equals("休息视频")) {
-                        Intent intent = new Intent(GankActivity.this, WebActivity.class);
+                        Intent intent = new Intent(GankActivity.this, WebViewActivity.class);
                         intent.putExtra(GankConfig.GANK, gankList.get(0));
                         startActivity(intent);
                 } else {
@@ -99,7 +101,7 @@ public class GankActivity extends ToolBarActivity<GankPresenter> implements IGan
                 calendar.setTime(meizi.publishedAt);
                 presenter.fetchGankData(calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH)+1,calendar.get(Calendar.DAY_OF_MONTH));
                 gankList = new ArrayList<>();
-                adapter = new GankAdapter(gankList, this);
+                adapter = new GankAdapter(chromeViewPresenter,gankList, this);
                 recyclerView.setLayoutManager(new LinearLayoutManager(this));
                 recyclerView.setItemAnimator(new DefaultItemAnimator());
                 recyclerView.setAdapter(adapter);
@@ -161,6 +163,7 @@ public class GankActivity extends ToolBarActivity<GankPresenter> implements IGan
 
         @Override
         protected void initPresenter() {
+                chromeViewPresenter = new ChromeViewPresenter(GankActivity.this, this, this);
                 presenter = new GankPresenter(this, this);
                 presenter.init();
         }

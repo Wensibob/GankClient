@@ -40,6 +40,10 @@
                   android:screenOrientation="portrait"
                   android:theme="@style/AppTheme.NoActionBar">
         </activity>
+        <activity android:name=".ui.activity.WebViewActivity"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
     </application>
 

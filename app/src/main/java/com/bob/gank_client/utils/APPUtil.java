@@ -24,7 +24,7 @@ public class APPUtil{
                 ClipData clipData = ClipData.newPlainText("copy", text);
                 ClipboardManager manager = (ClipboardManager) view.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
                 manager.setPrimaryClip(clipData);
-                SnackBarUtil.showTipWithoutAction(view, text);
+                SnackBarUtil.showTipWithoutAction(view, success);
         }
 
         /**

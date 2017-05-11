@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.bob.gank_client.R;
+import com.bob.gank_client.mvp.presenter.ChromeViewPresenter;
 import com.bob.gank_client.mvp.presenter.MainPresenter;
 import com.bob.gank_client.mvp.view.IBaseView;
 import com.bob.gank_client.ui.adapter.MainPagerAdapter;
@@ -29,6 +30,8 @@ import butterknife.OnClick;
  */
 
 public class MainActivity extends ToolBarActivity<MainPresenter> implements IBaseView{
+
+        public ChromeViewPresenter chromeViewPresenter;
 
         //init drawer_layout
         @Bind(R.id.drawer_layout)
@@ -61,6 +64,7 @@ public class MainActivity extends ToolBarActivity<MainPresenter> implements IBas
 
         @Override
         protected void initPresenter() {
+                chromeViewPresenter = new ChromeViewPresenter(MainActivity.this, this, this);
                 presenter = new MainPresenter(this, this);
                 presenter.init();
         }
@@ -95,7 +99,7 @@ public class MainActivity extends ToolBarActivity<MainPresenter> implements IBas
                         }
                 });
 
-                MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager());
+                MainPagerAdapter mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager(),chromeViewPresenter);
                 viewPager.setAdapter(mainPagerAdapter);
                 viewPager.setOffscreenPageLimit(5);
                 tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);

@@ -24,4 +24,9 @@
     <string name="error_happened">出了点问题</string>
     <string name="copy_successed">复制成功</string>
     <string name="share_gank_to">想把干货分享到</string>
+    <string name="open_url_failed">打开网页失败了</string>
+    <string name="action_refresh">刷新</string>
+    <string name="action_copy_url">复制地址</string>
+    <string name="action_open_in_browser">用浏览器打开</string>
+    <string name="action_share_url">分享</string>
 </resources>

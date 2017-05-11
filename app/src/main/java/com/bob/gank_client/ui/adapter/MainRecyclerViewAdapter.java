@@ -2,6 +2,7 @@ package com.bob.gank_client.ui.adapter;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,8 +10,13 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bob.gank_client.GankConfig;
 import com.bob.gank_client.R;
 import com.bob.gank_client.mvp.model.entity.Gank;
+import com.bob.gank_client.mvp.presenter.ChromeViewPresenter;
+import com.bob.gank_client.ui.activity.WebActivity;
+import com.bob.gank_client.ui.activity.WebViewActivity;
+import com.bob.gank_client.ui.chromeviews.CustomTabActivityHelper;
 import com.bob.gank_client.utils.DateUtil;
 import com.bob.gank_client.utils.SnackBarUtil;
 
@@ -27,10 +33,12 @@ import butterknife.OnClick;
 public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerViewAdapter.MainMainRecyclerViewHolder> {
 
         List<Gank> gankList;
-        Context context;
+        static Context context;
         int lastPosition = 0;
+        static ChromeViewPresenter presenter;
 
-        public MainRecyclerViewAdapter(List<Gank> gankList, Context context) {
+        public MainRecyclerViewAdapter(ChromeViewPresenter presenter,List<Gank> gankList, Context context) {
+                this.presenter = presenter;
                 this.gankList = gankList;
                 this.context = context;
         }
@@ -98,7 +106,14 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerVi
                 void cardClick() {
                         //TODO 打开webActivity
                         //tv_title.gettag()
-                        SnackBarUtil.showTipWithoutAction(linearLayout,((Gank)tv_title.getTag()).desc);
+//                        SnackBarUtil.showTipWithoutAction(linearLayout,((Gank)tv_title.getTag()).desc);
+
+                        presenter.openWebView((Gank)tv_title.getTag());
+//
+//
+//                        Intent intent = new Intent(context, WebViewActivity.class);
+//                        intent.putExtra(GankConfig.GANK,(Gank)tv_title.getTag());
+//                        context.startActivity(intent);
                 }
 
                 View card;
