@@ -94,9 +94,6 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerVi
         static class MainMainRecyclerViewHolder extends RecyclerView.ViewHolder {
                 @Bind(R.id.tv_main_fragment_item_date)
                 TextView tv_date;
-                //TODO 如果运行正常，这里可以去掉
-                @Bind(R.id.main_fragment_card_ll)
-                LinearLayout linearLayout;
                 @Bind(R.id.tv_main_frgment_item_title)
                 TextView tv_title;
                 @Bind(R.id.tv_main_frgment_item_author)
@@ -104,16 +101,7 @@ public class MainRecyclerViewAdapter extends RecyclerView.Adapter<MainRecyclerVi
 
                 @OnClick(R.id.main_fragment_card_view)
                 void cardClick() {
-                        //TODO 打开webActivity
-                        //tv_title.gettag()
-//                        SnackBarUtil.showTipWithoutAction(linearLayout,((Gank)tv_title.getTag()).desc);
-
                         presenter.openWebView((Gank)tv_title.getTag());
-//
-//
-//                        Intent intent = new Intent(context, WebViewActivity.class);
-//                        intent.putExtra(GankConfig.GANK,(Gank)tv_title.getTag());
-//                        context.startActivity(intent);
                 }
 
                 View card;

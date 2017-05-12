@@ -38,11 +38,6 @@ public abstract class ToolBarActivity <T extends BasePresenter>extends BaseActiv
         protected void initToolBar() {
                 setSupportActionBar(toolbar);
                 //TODO 需要在子类实现
-//                actionBar = getSupportActionBar();
-//                if (actionBar != null) {
-//                        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu);
-//                        actionBar.setDisplayHomeAsUpEnabled(canBack());
-//                }
         }
 
         protected void hideOrShowToolBar() {

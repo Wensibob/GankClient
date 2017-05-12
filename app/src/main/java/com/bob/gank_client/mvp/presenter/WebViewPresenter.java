@@ -23,8 +23,6 @@ import java.net.URI;
  */
 
 public class WebViewPresenter extends BasePresenter<IWebView> {
-        //TODO 添加类似Chrome的效果，将网页以及视频播放使用同一个Presenter
-
         public WebViewPresenter(Context context, IWebView iView) {
                 super(context, iView);
         }

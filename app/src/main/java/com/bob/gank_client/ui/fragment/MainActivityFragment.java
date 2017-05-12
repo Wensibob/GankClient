@@ -81,9 +81,9 @@ public class MainActivityFragment extends BaseFragment<MainFragmentPresenter> im
                 MainActivity. toolbar.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
-                                //TODO viewpager中的Toolbar的点击事件无法调用recyclerview
                                 SnackBarUtil.showTipWithoutAction(recyclerView,"点击了toolbar也没用==~~==");
                                 recyclerView.scrollToPosition(0);
+                                //TODO viewpager中的Toolbar的点击事件无法调用recyclerview
 //                                recyclerView.smoothScrollToPosition(2);
                         }
                 });

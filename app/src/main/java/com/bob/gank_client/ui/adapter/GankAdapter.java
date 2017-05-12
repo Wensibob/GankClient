@@ -87,11 +87,7 @@ public class GankAdapter extends  RecyclerView.Adapter<GankAdapter.GankHolder>{
 
                 @OnClick(R.id.gank_item_card_ll)
                 void gankClick() {
-                        //TODO 出发点击事件启动WebActivity
                         chromeViewPresenter.openWebView((Gank)cardView.getTag());
-                        /*Intent intent = new Intent(context, WebViewActivity.class);
-                        intent.putExtra(GankConfig.GANK, (Gank)cardView.getTag());
-                        context.startActivity(intent);*/
                 }
 
                 public GankHolder(View itemView) {
