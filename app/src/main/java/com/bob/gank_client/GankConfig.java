@@ -11,6 +11,7 @@ public class GankConfig {
 
         public static final String MEIZI="meizi";
         public static final String GANK = "gank";
+        public static final String URL = "url";
         public static final String TRANSLATE_GIRL_VIEW = "share_girl";
         public static final String HOST = "http://gank.io/api/";
         public static final String CHROME = "chrome";

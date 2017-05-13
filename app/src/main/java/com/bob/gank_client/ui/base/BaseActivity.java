@@ -22,13 +22,14 @@ public abstract class BaseActivity <T extends BasePresenter>extends AppCompatAct
                 super.onCreate(savedInstanceState);
                 setContentView(provideContentViewId());
                 ButterKnife.bind(this);
-                initPresenter();
-                Log.i(TAG, "onCreate");
+//                initPresenter();
+//                Log.i(TAG, "onCreate");
         }
 
         protected abstract int provideContentViewId();
 
         protected abstract void initPresenter();
+
 
         @Override
         public boolean onOptionsItemSelected(MenuItem item) {

@@ -1,5 +1,6 @@
 package com.bob.gank_client.utils;
 
+import android.app.Activity;
 import android.content.ClipData;
 import android.content.ClipboardManager;
 import android.content.Context;
@@ -25,6 +26,13 @@ public class APPUtil{
                 ClipboardManager manager = (ClipboardManager) view.getContext().getSystemService(Context.CLIPBOARD_SERVICE);
                 manager.setPrimaryClip(clipData);
                 SnackBarUtil.showTipWithoutAction(view, success);
+        }
+
+        public static void copyToClipboard(Context context, String text)
+        {
+                ClipData clipData = ClipData.newPlainText("copy", text);
+                ClipboardManager manager = (ClipboardManager) context.getSystemService(Context.CLIPBOARD_SERVICE);
+                manager.setPrimaryClip(clipData);
         }
 
         /**

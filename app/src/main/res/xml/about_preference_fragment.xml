@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.preference.PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <android.support.v7.preference.PreferenceCategory android:title="@string/app_name">
+
+        <android.support.v7.preference.Preference android:title="@string/app_version" />
+
+        <android.support.v7.preference.Preference android:title="@string/star"
+            android:key="star"
+            android:summary="@string/star_desc" />
+
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory android:title="@string/author">
+
+        <android.support.v7.preference.Preference android:title="@string/author_name"
+            android:key="author"
+            android:summary="@string/author_place"/>
+
+        <android.support.v7.preference.Preference
+            android:title="@string/go_to_my_blog"
+            android:key="go_to_my_blog"
+            android:summary="@string/blog_url"/>
+
+        <android.support.v7.preference.Preference
+            android:title="@string/follow_me_on_github"
+            android:key="follow_me_on_github"
+            android:summary="@string/github_url"/>
+
+        <android.support.v7.preference.Preference
+            android:title="@string/contact_with_me"
+            android:key="contact_with_me"
+            android:summary="@string/email"/>
+
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory android:title="@string/support">
+
+        <android.support.v7.preference.Preference android:title="@string/feedback"
+            android:key="feedback"
+            android:summary="@string/feedback_desc"/>
+
+        <android.support.v7.preference.Preference android:title="@string/coffee"
+            android:key="coffee"
+            android:summary="@string/coffee_desc"/>
+
+    </android.support.v7.preference.PreferenceCategory>
+
+    <android.support.v7.preference.PreferenceCategory android:title="@string/thanks">
+        <android.support.v7.preference.Preference android:title="@string/daimajia"
+                                                  android:key="daimajia"
+                                                  android:summary="@string/daimajia_url"/>
+
+        <android.support.v7.preference.Preference android:title="@string/Gank.lu"
+                                                  android:key="gank_lu"
+                                                  android:summary="@string/Gank.lu_url"/>
+
+        <android.support.v7.preference.Preference android:title="@string/open_source_license"
+                                                  android:key="open_source_license"
+                                                  android:summary="@string/open_source_name"
+            />
+
+    </android.support.v7.preference.PreferenceCategory>
+
+</android.support.v7.preference.PreferenceScreen>

@@ -47,7 +47,6 @@ public class DailyActivity extends ToolBarActivity<DailyPresenter> implements ID
 //                if (meizis == null) {
 //                }
                 adapter = new MeiziAdapter(meizis,this);
-                //TODO 可以设置为GridLayoutManager
                 recyclerView.setLayoutManager(new LinearLayoutManager(this));
                 recyclerView.setAdapter(adapter);
                 recyclerView.setLoadMoreListener(this);

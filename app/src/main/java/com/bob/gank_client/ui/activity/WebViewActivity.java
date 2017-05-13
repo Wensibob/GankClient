@@ -16,6 +16,7 @@ import com.bob.gank_client.mvp.model.entity.Gank;
 import com.bob.gank_client.mvp.presenter.WebViewPresenter;
 import com.bob.gank_client.mvp.view.IWebView;
 import com.bob.gank_client.ui.base.ToolBarActivity;
+import com.bob.gank_client.utils.ShareUtil;
 import com.bob.gank_client.utils.SnackBarUtil;
 
 import butterknife.Bind;
@@ -27,6 +28,7 @@ import butterknife.Bind;
 public class WebViewActivity extends ToolBarActivity<WebViewPresenter> implements IWebView {
 
         private Gank gank;
+        private String url;
         WebViewPresenter presenter;
 
         @Bind(R.id.toolbar)
@@ -46,9 +48,15 @@ public class WebViewActivity extends ToolBarActivity<WebViewPresenter> implement
 
         @Override
         public void init() {
-                gank = (Gank) getIntent().getSerializableExtra(GankConfig.GANK);
-                setTitle(gank.desc);
-                presenter.setWebViewSettings(webView, gank.url);
+                if (getIntent().getSerializableExtra(GankConfig.GANK) != null) {
+                        gank = (Gank) getIntent().getSerializableExtra(GankConfig.GANK);
+                        setTitle(gank.desc);
+                        presenter.setWebViewSettings(webView, gank.url);
+                } else {
+                        url = getIntent().getStringExtra(GankConfig.URL);
+                        setTitle(url);
+                        presenter.setWebViewSettings(webView,url);
+                }
         }
 
         @Override
@@ -133,8 +141,12 @@ public class WebViewActivity extends ToolBarActivity<WebViewPresenter> implement
                                 presenter.openInBrowser(webView.getUrl());
                                 break;
                         case R.id.action_share_url:
-                                presenter.shareGank(gank);
-                                break;
+                                if (gank != null) {
+                                        presenter.shareGank(gank);
+                                        break;
+                                } else {
+                                        ShareUtil.shareURL(this, url);
+                                }
                 }
                 return super.onOptionsItemSelected(item);
         }

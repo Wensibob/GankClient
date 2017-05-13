@@ -29,6 +29,16 @@ public class ShareUtil {
                 intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                 context.startActivity(Intent.createChooser(intent, context.getString(R.string.share_gank_to)));
         }
+
+        public static void shareURL(Context context, String url) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_TEXT, url);
+                intent.setType("text/plain");
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(Intent.createChooser(intent, context.getString(R.string.share_url_to)));
+        }
+
         //TODO 分享图片如上，分享链接的时候需要做到如简书的效果
 
         //TODO 分享APP的时候可以适当花些功夫

@@ -33,8 +33,6 @@ public class ChromeViewPresenter extends BasePresenter<IBaseView>{
 
         private AppCompatActivity activity;
         private CustomTabsIntent.Builder customTabsIntent;
-        private Gank gank;
-
 
         public ChromeViewPresenter(final AppCompatActivity activity, Context context, IBaseView iView) {
                 super(context, iView);
@@ -44,7 +42,13 @@ public class ChromeViewPresenter extends BasePresenter<IBaseView>{
                 customTabsIntent.setShowTitle(true);
                 customTabsIntent.setStartAnimations(activity, R.anim.slide_in_right, R.anim.slide_out_left);
                 customTabsIntent.setExitAnimations(activity, R.anim.slide_in_left,R.anim.slide_out_right);
+        }
 
+        @Override
+        public void release() {
+        }
+
+        public void openWebView(final Gank gank) {
                 //set the share action button
                 Observable.create(new ObservableOnSubscribe() {
                         @Override
@@ -52,40 +56,33 @@ public class ChromeViewPresenter extends BasePresenter<IBaseView>{
                                 e.onNext(android.R.drawable.ic_menu_share);
                         }
                 }).subscribeOn(Schedulers.newThread())
-                    .map(new Function<Integer, Bitmap>() {
-                        @Override
-                        public Bitmap apply(@NonNull Integer integer) throws Exception {
-                                return BitmapFactory.decodeResource(activity.getResources(), integer);
-                        }
-                }).observeOn(AndroidSchedulers.mainThread())
+                        .map(new Function<Integer, Bitmap>() {
+                                @Override
+                                public Bitmap apply(@NonNull Integer integer) throws Exception {
+                                        return BitmapFactory.decodeResource(activity.getResources(), integer);
+                                }
+                        }).observeOn(AndroidSchedulers.mainThread())
                         .subscribe(new Consumer<Bitmap>() {
                                 @Override
                                 public void accept(@NonNull Bitmap bitmap) throws Exception {
                                         Intent actionIntent = new Intent(Intent.ACTION_SEND);
-                                        actionIntent.putExtra(Intent.EXTRA_TEXT, "gank" );
+                                        actionIntent.putExtra(Intent.EXTRA_TEXT, gank.desc+gank.url );
                                         actionIntent.setType("text/plain");
                                         actionIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
                                         PendingIntent pi = PendingIntent.getActivity(activity, 0, actionIntent, PendingIntent.FLAG_UPDATE_CURRENT);
                                         customTabsIntent.setActionButton(bitmap, activity.getString(R.string.share_gank_to),pi,true);
-                                }
-                        });
-        }
 
-        @Override
-        public void release() {
-        }
-
-        public void openWebView(Gank gank) {
-                CustomTabActivityHelper.openCustomTab(
-                        activity,
-                        customTabsIntent.build(),
-                        gank,
-                        new CustomFallback() {
-                                @Override
-                                public void openUri(Activity activity, Gank gank) {
-                                        ChromeViewPresenter.this.gank = gank;
-                                        Log.d("Gank", gank.toString());
-                                        super.openUri(activity, gank);
+                                        CustomTabActivityHelper.openCustomTab(
+                                                activity,
+                                                customTabsIntent.build(),
+                                                gank,
+                                                new CustomFallback() {
+                                                        @Override
+                                                        public void openUri(Activity activity, Gank gank) {
+                                                                Log.d("Gank", gank.toString());
+                                                                super.openUri(activity, gank);
+                                                        }
+                                                });
                                 }
                         });
         }

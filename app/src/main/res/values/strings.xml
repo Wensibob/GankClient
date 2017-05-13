@@ -29,4 +29,60 @@
     <string name="action_copy_url">复制地址</string>
     <string name="action_open_in_browser">用浏览器打开</string>
     <string name="action_share_url">分享</string>
+
+    <!--关于界面-->
+    <string name="app_version">版本:V1.0.0</string>
+    <string name="star">为干货集中营客户端评分</string>
+    <string name="star_desc">如果你喜欢这个应用，请您在商店中给他一个好评吧==</string>
+    <string name="author">作者</string>
+    <string name="author_name">温斯渤</string>
+    <string name="author_place">广东,广州,宇宙工业大学</string>
+    <string name="go_to_my_blog">去我的个人博客</string>
+    <string name="blog_url">http://wensibo.net</string>
+    <string name="share_blog_url">请访问我的博客：http://wensibo.net</string>
+    <string name="follow_me_on_github">请您在Github中关注我</string>
+    <string name="share_follow_me_on_github">请关注我的Github：https://github.com/wensibob</string>
+    <string name="github_url">https://github.com/wensibob</string>
+    <string name="contact_with_me">与我联系</string>
+    <string name="email">wensibob@gmail.com</string>
+    <string name="support">支持</string>
+    <string name="feedback">反馈Bug/建议</string>
+    <string name="feedback_desc">帮助我改进干货集中营客户端</string>
+    <string name="coffee">请我喝杯咖啡</string>
+    <string name="coffee_desc">如果你认同我的工作，可以请我喝杯咖啡</string>
+    <string name="thanks">感谢</string>
+    <string name="daimajia">代码家</string>
+    <string name="daimajia_url">http://gank.io</string>
+    <string name="share_daimajia_url">请关注代码家：http://gank.io</string>
+    <string name="Gank.lu">Gank.lu</string>
+    <string name="Gank.lu_url">https://github.com/Panl/Gank.lu</string>
+    <string name="share_Gank.lu_url">请关注Gank.lu：https://github.com/Panl/Gank.lu</string>
+    <string name="open_source_license">开源协议</string>
+    <string name="open_source_name">
+        compile \'com.android.support:cardview-v7:25.3.1\'\n
+        compile \'com.android.support:preference-v14:25.1.1\'\n
+        compile \'com.android.support:customtabs:25.1.1\'\n
+        compile \'io.reactivex.rxjava2:rxjava:2.1.0\'\n
+        compile \'com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0\'\n
+        compile \'com.squareup.retrofit2:retrofit:2.2.0\'\n
+        compile \'com.github.bumptech.glide:glide:3.7.0\'\n
+        compile \'com.commit451:PhotoView:1.2.4\'\n
+        compile \'com.jakewharton:butterknife:7.0.1\'\n
+        compile \'com.yalantis:phoenix:1.2.3\'
+    </string>
+
+    <string name="no_app_store">您没有安装应用市场</string>
+    <string name="no_email">您没有安装邮箱应用</string>
+    <string name="share_url_to">把链接分享到</string>
+    <string name="sendto">mailto:wensibob@gmail.com</string>
+    <string name="mail_topic_feedback">干货集中营客户端使用反馈与建议</string>
+    <string name="mail_topic">干货集中营客户端</string>
+    <string name="device_model">设备型号:</string>
+    <string name="sdk_version">Android版本</string>
+    <string name="donate_content">支付宝账号将会复制到粘贴板，进入支付宝可直接粘贴完成捐赠，感谢您的支持！</string>
+    <string name="positive">确定</string>
+    <string name="negative">取消</string>
+    <string name="alipay_account">wensibob@gmail.com</string>
+
+
 </resources>

@@ -2,8 +2,11 @@ package com.bob.gank_client.ui.activity;
 
 import android.graphics.Color;
 import android.os.Build;
+import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
@@ -56,6 +59,10 @@ public class MainActivity extends ToolBarActivity<MainPresenter> implements IBas
                 presenter.toDailyActivity();
         }
 
+        @Override
+        public void onCreate(@Nullable Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+        }
 
         @Override
         protected int provideContentViewId() {
@@ -84,13 +91,9 @@ public class MainActivity extends ToolBarActivity<MainPresenter> implements IBas
                         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                                 int id = item.getItemId();
                                 switch (id){
-                                        case R.id.nav_settings:
-                                                drawer.closeDrawer(GravityCompat.START);
-//                                                presenter.toSettingActivity();
-
                                         case R.id.nav_about:
                                                 drawer.closeDrawer(GravityCompat.START);
-//                                                presenter.toAboutActivity();
+                                                presenter.toAboutActivity();
                                         default:
                                                 drawer.closeDrawer(GravityCompat.START);
                                                 break;
@@ -104,17 +107,6 @@ public class MainActivity extends ToolBarActivity<MainPresenter> implements IBas
                 viewPager.setOffscreenPageLimit(5);
                 tabLayout.setTabMode(TabLayout.MODE_SCROLLABLE);
                 tabLayout.setupWithViewPager(viewPager);
-        }
-
-        @Override
-        protected void initToolBar() {
-                super.initToolBar();
-                actionBar = getSupportActionBar();
-                if (actionBar != null) {
-                      /*  actionBar.setDisplayHomeAsUpEnabled(true);
-                        actionBar.setHomeAsUpIndicator(android.R.drawable.ic_menu_);*/
-                        actionBar.setDisplayShowHomeEnabled(true);
-                }
         }
 
         @Override
@@ -132,8 +124,12 @@ public class MainActivity extends ToolBarActivity<MainPresenter> implements IBas
                 presenter.release();
         }
 
+        @Override
+        public boolean onCreateOptionsMenu(Menu menu) {
+                return super.onCreateOptionsMenu(menu);
+        }
 
-          @Override
+        @Override
         public boolean onOptionsItemSelected(MenuItem item) {
                 switch (item.getItemId()) {
                         case android.R.id.home:

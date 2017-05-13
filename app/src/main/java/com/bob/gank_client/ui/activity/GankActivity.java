@@ -82,9 +82,6 @@ public class GankActivity extends ToolBarActivity<GankPresenter> implements IGan
         private void showVideo() {
                 //TODO 添加webvideo
                 if (gankList.size() > 0 && gankList.get(0).type.equals("休息视频")) {
-//                        Intent intent = new Intent(GankActivity.this, WebViewActivity.class);
-//                        intent.putExtra(GankConfig.GANK, gankList.get(0));
-//                        startActivity(intent);
                         chromeViewPresenter.openWebView(gankList.get(0));
                 } else {
                         SnackBarUtil.showTipWithoutAction(gankFab,getString(R.string.error_happened));

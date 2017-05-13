@@ -14,6 +14,8 @@ import com.bob.gank_client.R;
 import com.bob.gank_client.mvp.model.entity.Gank;
 import com.bob.gank_client.mvp.presenter.ChromeViewPresenter;
 import com.bob.gank_client.ui.activity.WebViewActivity;
+import com.bob.gank_client.utils.APPUtil;
+import com.bob.gank_client.utils.SnackBarUtil;
 
 import java.util.List;
 
@@ -26,7 +28,7 @@ import butterknife.OnClick;
  */
 
 public class GankAdapter extends  RecyclerView.Adapter<GankAdapter.GankHolder>{
-        private  List<Gank> gankList;
+        private static  List<Gank> gankList;
         private static Context context;
         private static ChromeViewPresenter chromeViewPresenter;
 
@@ -87,7 +89,26 @@ public class GankAdapter extends  RecyclerView.Adapter<GankAdapter.GankHolder>{
 
                 @OnClick(R.id.gank_item_card_ll)
                 void gankClick() {
-                        chromeViewPresenter.openWebView((Gank)cardView.getTag());
+                        final Gank click_gank = (Gank) cardView.getTag();
+                        if (click_gank.type.equals("休息视频")) {
+                                if (APPUtil.isNetWorkAvaliable(context)) {
+                                        if (APPUtil.isWifiConnected(context)) {
+                                                chromeViewPresenter.openWebView(click_gank);
+                                        } else {
+                                                SnackBarUtil.showTipWithAction(cardView, context.getString(R.string.wifi_unavaliable), context.getString(R.string.wifi_continue), new View.OnClickListener() {
+                                                        @Override
+                                                        public void onClick(View v) {
+                                                                chromeViewPresenter.openWebView(click_gank);
+                                                        }
+                                                });
+                                        }
+                                } else {
+                                        //TODO 添加一个动作事件，前往网络设置页面
+                                        SnackBarUtil.showTipWithoutAction(cardView,context.getString(R.string.network_unavaliable));
+                                }
+                        } else {
+                                chromeViewPresenter.openWebView(click_gank);
+                        }
                 }
 
                 public GankHolder(View itemView) {

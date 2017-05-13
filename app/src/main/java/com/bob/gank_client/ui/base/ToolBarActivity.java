@@ -29,6 +29,7 @@ public abstract class ToolBarActivity <T extends BasePresenter>extends BaseActiv
                 super.onCreate(savedInstanceState);
                 toolbar = (Toolbar) findViewById(R.id.toolbar);
                 initToolBar();
+                initPresenter();
         }
 
         protected boolean canBack() {
