@@ -107,6 +107,17 @@ public class MainActivity extends ToolBarActivity<MainPresenter> implements IBas
         }
 
         @Override
+        protected void initToolBar() {
+                super.initToolBar();
+                actionBar = getSupportActionBar();
+                if (actionBar != null) {
+                      /*  actionBar.setDisplayHomeAsUpEnabled(true);
+                        actionBar.setHomeAsUpIndicator(android.R.drawable.ic_menu_);*/
+                        actionBar.setDisplayShowHomeEnabled(true);
+                }
+        }
+
+        @Override
         public void onBackPressed() {
                 if (drawer.isDrawerOpen(GravityCompat.START)) {
                         drawer.closeDrawer(GravityCompat.START);

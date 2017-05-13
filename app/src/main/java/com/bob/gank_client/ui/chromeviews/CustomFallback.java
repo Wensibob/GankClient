@@ -36,7 +36,6 @@ public class CustomFallback implements CustomTabActivityHelper.CustomTabFallback
     @Override
     public void openUri(Activity activity, Gank gank) {
             activity.startActivity(new Intent(activity, WebViewActivity.class).putExtra(GankConfig.GANK, gank));
-//        activity.startActivity(new Intent(activity, WebViewActivity.class).putExtra(GankConfig.CHROME, uri.toString()));
             Log.d("CustomFallback", "Can  resolve openUri");
     }
 
