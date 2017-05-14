@@ -1,7 +1,11 @@
 package com.bob.gank_client.ui.activity;
 
 import android.graphics.Bitmap;
+import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
+import android.os.Bundle;
+import android.support.design.widget.AppBarLayout;
 import android.support.v4.view.ViewCompat;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -23,6 +27,7 @@ import com.bumptech.glide.request.animation.GlideAnimation;
 import com.bumptech.glide.request.target.SimpleTarget;
 
 import butterknife.Bind;
+import butterknife.ButterKnife;
 import uk.co.senab.photoview.PhotoViewAttacher;
 
 /**
@@ -39,8 +44,14 @@ public class MeiZiActivity extends ToolBarActivity<MeiZiPresenter> implements IM
         ImageView imageView;
 
         @Override
+        protected void onCreate(Bundle savedInstanceState) {
+                super.onCreate(savedInstanceState);
+        }
+
+        @Override
         public void init() {
-                appBarLayout.setAlpha(0.6f);
+//                appBarLayout.setAlpha(0.6f);
+                setTitle("");
                 meizi = (Meizi) getIntent().getSerializableExtra(GankConfig.MEIZI);
                 imageView.setImageDrawable(ShareElement.shareDrawable);
                 ViewCompat.setTransitionName(imageView,GankConfig.TRANSLATE_GIRL_VIEW);

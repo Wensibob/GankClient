@@ -2,23 +2,16 @@ package com.bob.gank_client.ui.adapter;
 
 import android.animation.ObjectAnimator;
 import android.content.Context;
-import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.bob.gank_client.GankConfig;
 import com.bob.gank_client.R;
 import com.bob.gank_client.mvp.model.entity.Gank;
 import com.bob.gank_client.mvp.presenter.ChromeViewPresenter;
-import com.bob.gank_client.ui.activity.WebActivity;
-import com.bob.gank_client.ui.activity.WebViewActivity;
-import com.bob.gank_client.ui.chromeviews.CustomTabActivityHelper;
 import com.bob.gank_client.utils.DateUtil;
-import com.bob.gank_client.utils.SnackBarUtil;
 
 import java.util.List;
 

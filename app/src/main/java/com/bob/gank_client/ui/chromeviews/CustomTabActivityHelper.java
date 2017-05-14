@@ -23,6 +23,7 @@ import android.support.customtabs.CustomTabsClient;
 import android.support.customtabs.CustomTabsIntent;
 import android.support.customtabs.CustomTabsServiceConnection;
 import android.support.customtabs.CustomTabsSession;
+import android.view.View;
 
 import com.bob.gank_client.mvp.model.entity.Gank;
 
@@ -49,6 +50,7 @@ public class CustomTabActivityHelper implements ServiceConnectionCallback {
      */
     public static void openCustomTab(Activity activity,
                                      CustomTabsIntent customTabsIntent,
+                                     View view,
                                     Gank gank,
                                      CustomTabFallback fallback) {
         String packageName = CustomTabsHelper.getPackageNameToUse(activity);
@@ -58,7 +60,7 @@ public class CustomTabActivityHelper implements ServiceConnectionCallback {
         //Chrome Custom Tabs installed. So, we fallback to the webview
         if (packageName == null) {
             if (fallback != null) {
-                fallback.openUri(activity, gank);
+                fallback.openUri(activity, view,gank);
             }
         } else {
             customTabsIntent.intent.setPackage(packageName);
@@ -189,6 +191,8 @@ public class CustomTabActivityHelper implements ServiceConnectionCallback {
         void openUri(Activity activity, Gank gank);
 
             void openUri(Activity activity, String url);
+
+            void openUri(Activity activity, View view, Gank gank);
     }
 
 }

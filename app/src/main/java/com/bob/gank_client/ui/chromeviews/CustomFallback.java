@@ -18,10 +18,11 @@ package com.bob.gank_client.ui.chromeviews;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.net.Uri;
 import android.util.Log;
+import android.view.View;
 
 import com.bob.gank_client.GankConfig;
+import com.bob.gank_client.R;
 import com.bob.gank_client.mvp.model.entity.Gank;
 import com.bob.gank_client.ui.activity.WebViewActivity;
 import com.bob.gank_client.utils.SnackBarUtil;
@@ -37,6 +38,16 @@ public class CustomFallback implements CustomTabActivityHelper.CustomTabFallback
     public void openUri(Activity activity, Gank gank) {
             activity.startActivity(new Intent(activity, WebViewActivity.class).putExtra(GankConfig.GANK, gank));
     }
+
+        @Override
+        public void openUri(final Activity activity, final View view, final Gank gank) {
+                SnackBarUtil.showTipWithAction(view, activity.getString(R.string.no_chrome_info), activity.getString(R.string.comfirm), new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                activity.startActivity(new Intent(activity, WebViewActivity.class).putExtra(GankConfig.GANK, gank));
+                        }
+                });
+        }
 
         @Override
         public void openUri(Activity activity, String url) {

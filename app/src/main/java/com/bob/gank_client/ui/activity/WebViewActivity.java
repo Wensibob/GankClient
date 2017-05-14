@@ -37,9 +37,6 @@ public class WebViewActivity extends ToolBarActivity<WebViewPresenter> implement
         WebView webView;
         @Bind(R.id.progressBar)
         ProgressBar progressBar;
-        @Bind(R.id.web_ll)
-        LinearLayout linearLayout;
-
 
         @Override
         public void onCreate( Bundle savedInstanceState) {

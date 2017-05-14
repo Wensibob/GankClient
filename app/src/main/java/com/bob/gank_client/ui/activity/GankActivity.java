@@ -162,7 +162,7 @@ public class GankActivity extends ToolBarActivity<GankPresenter> implements IGan
 
         @Override
         protected void initPresenter() {
-                chromeViewPresenter = new ChromeViewPresenter(GankActivity.this, this, this);
+                chromeViewPresenter = new ChromeViewPresenter(GankActivity.this, recyclerView,this, this);
                 presenter = new GankPresenter(this, this);
                 presenter.init();
         }

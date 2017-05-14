@@ -20,6 +20,7 @@ import com.bob.gank_client.R;
 import com.bob.gank_client.mvp.model.entity.Gank;
 import com.bob.gank_client.mvp.view.IAboutView;
 import com.bob.gank_client.mvp.view.IBaseView;
+import com.bob.gank_client.ui.activity.LicenseActivity;
 import com.bob.gank_client.ui.chromeviews.CustomFallback;
 import com.bob.gank_client.ui.chromeviews.CustomTabActivityHelper;
 import com.bob.gank_client.utils.APPUtil;
@@ -159,7 +160,7 @@ public class AboutFragmentPresenter extends BasePresenter<IAboutView> {
         }
 
         public void openLicense() {
-
+                activity.startActivity(new Intent(activity, LicenseActivity.class));
         }
 
 }

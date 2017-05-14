@@ -10,7 +10,7 @@ import android.view.View;
 public class SnackBarUtil {
 
         public static void showTipWithAction(View view, String tipText, String actionText, View.OnClickListener listener) {
-                Snackbar.make(view, tipText, Snackbar.LENGTH_INDEFINITE).setAction(actionText, listener).show();
+                Snackbar.make(view, tipText, Snackbar.LENGTH_LONG).setAction(actionText, listener).show();
         }
 
         public static void showTipWithAction(View view, String tipText, String actionText, View.OnClickListener listener, int duration) {

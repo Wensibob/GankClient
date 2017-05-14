@@ -83,6 +83,9 @@
     <string name="positive">确定</string>
     <string name="negative">取消</string>
     <string name="alipay_account">wensibob@gmail.com</string>
+    <string name="license">开源协议</string>
+    <string name="no_chrome_info">如果您想获得极致的网页体验，请安装谷歌浏览器并设置其为默认浏览器</string>
+    <string name="comfirm">我明白啦！</string>
 
 
 </resources>

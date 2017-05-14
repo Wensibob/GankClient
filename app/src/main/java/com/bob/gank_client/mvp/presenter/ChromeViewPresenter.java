@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.support.customtabs.CustomTabsIntent;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 
 import com.bob.gank_client.R;
 import com.bob.gank_client.mvp.model.entity.Gank;
@@ -33,10 +34,12 @@ public class ChromeViewPresenter extends BasePresenter<IBaseView>{
 
         private AppCompatActivity activity;
         private CustomTabsIntent.Builder customTabsIntent;
+        private View view;
 
-        public ChromeViewPresenter(final AppCompatActivity activity, Context context, IBaseView iView) {
+        public ChromeViewPresenter(final AppCompatActivity activity, View view,Context context, IBaseView iView) {
                 super(context, iView);
                 this.activity = activity;
+                this.view = view;
                 customTabsIntent = new CustomTabsIntent.Builder();
                 customTabsIntent.setToolbarColor(activity.getResources().getColor(R.color.colorPrimaryDark));
                 customTabsIntent.setShowTitle(true);
@@ -75,12 +78,13 @@ public class ChromeViewPresenter extends BasePresenter<IBaseView>{
                                         CustomTabActivityHelper.openCustomTab(
                                                 activity,
                                                 customTabsIntent.build(),
+                                                view,
                                                 gank,
                                                 new CustomFallback() {
                                                         @Override
-                                                        public void openUri(Activity activity, Gank gank) {
+                                                        public void openUri(Activity activity, View view,Gank gank) {
                                                                 Log.d("Gank", gank.toString());
-                                                                super.openUri(activity, gank);
+                                                                super.openUri(activity, view,gank);
                                                         }
                                                 });
                                 }

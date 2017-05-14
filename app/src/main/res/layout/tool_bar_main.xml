@@ -43,6 +43,6 @@
         android:layout_margin="@dimen/fab_margin"
         app:elevation="5dp"
         app:layout_scrollFlags="scroll|enterAlways"
-        app:srcCompat="@android:drawable/ic_dialog_email"/>
+        app:srcCompat="@drawable/ic_gank"/>
 
 </android.support.design.widget.CoordinatorLayout>

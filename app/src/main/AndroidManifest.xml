@@ -13,7 +13,6 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".ui.activity.MainActivity"
@@ -32,23 +31,32 @@
                   android:screenOrientation="portrait"
                   android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
         <activity android:name=".ui.activity.GankActivity"
                   android:screenOrientation="portrait"
                   android:theme="@style/ImageTheme">
         </activity>
+
         <activity android:name=".ui.activity.MeiZiActivity"
                   android:screenOrientation="portrait"
                   android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
         <activity android:name=".ui.activity.WebViewActivity"
                   android:screenOrientation="portrait"
                   android:theme="@style/AppTheme.NoActionBar">
         </activity>
+
         <activity android:name=".ui.activity.AboutActivity"
                   android:label="@string/about"
                   android:screenOrientation="portrait"
                   android:theme="@style/AppTheme.NoActionBar">
+        </activity>
 
+        <activity android:name=".ui.activity.LicenseActivity"
+                  android:label="@string/license"
+                  android:screenOrientation="portrait"
+                  android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
     </application>

@@ -3,8 +3,6 @@ package com.bob.gank_client.ui.activity;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.PersistableBundle;
-import android.support.annotation.IdRes;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.FloatingActionButton;
@@ -71,14 +69,14 @@ public class MainActivity extends ToolBarActivity<MainPresenter> implements IBas
 
         @Override
         protected void initPresenter() {
-                chromeViewPresenter = new ChromeViewPresenter(MainActivity.this, this, this);
+                fab = (FloatingActionButton) findViewById(R.id.fab_main);
+                chromeViewPresenter = new ChromeViewPresenter(MainActivity.this,fab, this, this);
                 presenter = new MainPresenter(this, this);
                 presenter.init();
         }
 
         @Override
         public void init() {
-                fab = (FloatingActionButton) findViewById(R.id.fab_main);
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                         getWindow().setStatusBarColor(Color.TRANSPARENT);
                         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN|View.SYSTEM_UI_FLAG_LAYOUT_STABLE);
