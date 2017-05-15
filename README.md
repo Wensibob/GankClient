@@ -1,13 +1,13 @@
 # GankClient
-![logo_icon](/screenshots/logo.png)    
+![logo_icon](/screenshots/logo.png)    <br><br>
+
 [中文版](/README-zh.md)
 ## Introduct
 GankClient is a brand new development app, which shows data from the [dry cargo hubs API](http://gank.io/api) and presents data in the way of Material Design. The APP uses MVP design architecture, and use RxJava2 to handle some thread problems, and the network framework is Retrofit. Faster loading speed, smoother page experience, more fun refresh effect, more beautiful web browsing, more beautiful visual enjoyment, I hope you will like this project, and actively pull requests, as well as feedback bugs.
 
 ##Preview
 ### Pictures
-![screenshot](/screenshots/1.png)![screenshot](/screenshots/2.png)![screenshot](/screenshots/3.png)    
-![screenshot](/screenshots/4.png)![screenshot](/screenshots/5.png)![screenshot](/screenshots/6.png)
+![screenshot](/screenshots/1.png)![screenshot](/screenshots/2.png)![screenshot](/screenshots/3.png)![screenshot](/screenshots/4.png)![screenshot](/screenshots/5.png)![screenshot](/screenshots/6.png)
 ### Gif
 ![gif](/screenshots/gank.gif)
 ## Download
