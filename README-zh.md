@@ -4,7 +4,7 @@
 [英文版](/README.md)
 ## 介绍
 GankClient又是一个全新的干货集中营客户端，它获取的是来自[干货集中营API](http://gank.io/api)的数据，利用全新的Material Design的设计语言呈现出数据内容。本APP采用MVP的设计架构，并且大量使用RxJava2，网络框架使用的是Retrofit。更快速的加载速度，更流畅的页面体验，更有趣的刷新效果，更精美的网页浏览，更美观的视觉享受，希望你能喜欢这个项目，并积极地向我Pull Request，以及反馈Bug。
-##预览效果
+## 预览效果
 ### 全部效果图来一发
 ![screenshot](/screenshots/1.png)![screenshot](/screenshots/2.png)![screenshot](/screenshots/3.png)![screenshot](/screenshots/4.png)![screenshot](/screenshots/5.png)![screenshot](/screenshots/6.png)      
 
