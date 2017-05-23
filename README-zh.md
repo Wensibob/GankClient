@@ -11,8 +11,11 @@ GankClient又是一个全新的干货集中营客户端，它获取的是来自[
 ### 没有gif图都不好意思说话了
 ![gif](/screenshots/gank.gif)
 ## 下载
-如果你想测试这个项目，那么请手动clone，如果你想尝试一下APP，那么你可以使劲[戳这里](http://fir.im/1110) ,或者扫下面的二维码，美滋滋。后期会发布到应用市场，希望大家可以多多支持！    
-![QRCode](/screenshots/QRCode.png)
+如果你想测试这个项目，那么请手动clone，如果你想尝试一下APP，那么请到下方的链接下载。
+### 酷市场
+[![](http://image.coolapk.com/apk_logo/2016/0108/12202_1452248424_4592.png)](http://www.coolapk.com/apk/com.bob.gank_client)
+
+
 ## 功能
 * 实时获取服务器的最新数据，CardView的布局更好的展现数据。
 * 刷新效果很好玩，感谢[Phoenix](https://github.com/Yalantis/Phoenix)
